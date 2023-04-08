@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Mongoose Nodes</title>
+</head>
+<body>
+  <h1>Node List</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Write the line of EJS to iterate over movies using forEach -->
+      <% nodes.forEach(function(n) { %>)
+        <tr>
+          <td><%= n.name %></td>
+        </tr>
+      <!-- Close the forEach using EJS here -->
+      <% }); %>
+    </tbody>
+  </table>
+</body>
+</html>
