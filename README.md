@@ -15,6 +15,9 @@ The application exposes the following HTTP endpoints for performing CRUD operati
 The application also includes unit tests for the third endpoint using Jest.
 
 
+
+
+
 Getting Started
 
 Prerequisites
@@ -24,7 +27,10 @@ Before running the application, make sure you have the following installed:
 Node.js (version 14 or higher)
 npm (version 6 or higher)
 MongoDB (version 4 or higher)
+
+
 Installation
+
 Clone the repository:
 
 bash
