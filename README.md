@@ -7,9 +7,13 @@ Features
 The application exposes the following HTTP endpoints for performing CRUD operations on the rocket component nodes:
 
 Create a node with a specified parent
+
 Add a property on a specific node
+
 Return the subtree of nodes with their properties for a provided node path
+
 The application also includes unit tests for the third endpoint using Jest.
+
 
 Getting Started
 Prerequisites
