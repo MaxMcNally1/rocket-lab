@@ -24,9 +24,11 @@ Prerequisites
 
 Before running the application, make sure you have the following installed:
 
-Node.js (version 14 or higher)
-npm (version 6 or higher)
-MongoDB (version 4 or higher)
+1. Node.js (version 14 or higher)
+
+2. npm (version 6 or higher)
+
+3. MongoDB (version 4 or higher)
 
 
 Installation
