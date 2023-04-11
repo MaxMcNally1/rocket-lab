@@ -1,89 +1,76 @@
-# rocket-lab
+# Node Hierarchy API
+
+This Node Hierarchy API is a Node.js application built with Express and Mongoose that allows you to create a tree-like structure of nodes with properties and manage their hierarchy.
+
+## Features
+
+- Create a node with a specified parent
+- Add properties to a node
+- Retrieve a subtree rooted at a specified node
+
+## Prerequisites
+
+- Node.js >= v14.x.x
+- MongoDB >= v4.x.x
+
+## Setup
+
+1. Clone this repository:
+   git clone https://github.com/MaxMcNally1/rocket-lab.git
+
+2. Install the dependencies:
+   cd into repo
+   npm install
+
+3. Make sure MongoDB is running on your local machine or update the MongoDB connection string in config/database.js to point to your database server.
+
+4. Seed the database with initial data:
+   node seed.js
+
+5. Start the server:
+
+   npm start
 
 
-This project is a Node.js application that provides a RESTful API for managing a hierarchical structure of rocket components. It uses MongoDB as its database, Mongoose for schema modeling, and Express for handling HTTP requests.
+## API Endpoints
 
-Features
-The application exposes the following HTTP endpoints for performing CRUD operations on the rocket component nodes:
+### Create a node with a specified parent
 
-1. Create a node with a specified parent
+- Method: POST
+- Endpoint: /node/parent/:parentId
+- Request Body:
+  {
+    "name": "NewNode",
+    "properties": [
+      {
+        "key": "ExampleKey",
+        "value": 123
+      }
+    ]
+  }
+- cURL example:
+  curl -X POST -H "Content-Type: application/json" -d '{"name": "NewNode", "properties": [{"key": "ExampleKey", "value": 123}]}' http://localhost:3000/node/parent/:parentId
 
-2. Add a property on a specific node
+### Add a property to a node
 
-3. Return the subtree of nodes with their properties for a provided node path
+- Method: PATCH
+- Endpoint: /node/:nodeId/property
+- Request Body:
+  {
+    "key": "NewProp",
+    "value": 456
+  }
+- cURL example:
+  curl -X PATCH -H "Content-Type: application/json" -d '{"key": "NewProp", "value": 456}' http://localhost:3000/node/:nodeId/property
 
-The application also includes unit tests for the third endpoint using Jest.
+### Get a subtree rooted at a specified node
 
+- Method: GET
+- Endpoint: /node/subtree/:path
+  (Replace :path with the path to the node, e.g., Rocket/Stage1/Engine1)
 
+- cURL example:
+  curl -X GET http://localhost:3000/node/subtree/Rocket/Stage1/Engine1
 
-
-
-Getting Started
-
-Prerequisites
-
-Before running the application, make sure you have the following installed:
-
-1. Node.js (version 14 or higher)
-
-2. npm (version 6 or higher)
-
-3. MongoDB (version 4 or higher)
-
-
-Installation
-
-Clone the repository:
-
-bash
-Copy code
-git clone https://github.com/yourusername/rocket_exam.git
-cd rocket_exam
-Install the dependencies:
-
-bash
-Copy code
-npm install
-Start the MongoDB server:
-
-bash
-Copy code
-mongod
-(Ensure that the MongoDB server is running and listening on the default port 27017.)
-
-Seed the database with sample data:
-
-bash
-Copy code
-node seed.js
-Start the application:
-
-bash
-Copy code
-npm start
-The application should now be running on http://localhost:3000.
-
-Running Tests
-To run the unit tests, simply execute the following command:
-
-bash
-Copy code
-npm test
-This will run the Jest test suite and display the results in the terminal.
-
-API Documentation
-Create a Node with a Specified Parent
-Endpoint: POST /node/parent/:parentId
-Params: parentId (the ID of the parent node)
-Body: JSON object with the following properties:
-name (string, required) - the name of the new node
-properties (array, optional) - an array of key-value pairs representing properties of the new node
-Add a Property on a Specific Node
-Endpoint: PATCH /node/:nodeId/property
-Params: nodeId (the ID of the node to add a property to)
-Body: JSON object with the following properties:
-key (string, required) - the key of the new property
-value (number, required) - the value of the new property
-Return the Subtree of Nodes with Their Properties for a Provided Node Path
-Endpoint: GET /node/subtree/:path
-Params: path (a slash-separated string representing the node path)
+### Get a subtree rooted at a specified node
+- Run unit test: npm test
