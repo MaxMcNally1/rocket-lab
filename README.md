@@ -1,6 +1,6 @@
 # rocket-lab
 
-Rocket Exam
+
 This project is a Node.js application that provides a RESTful API for managing a hierarchical structure of rocket components. It uses MongoDB as its database, Mongoose for schema modeling, and Express for handling HTTP requests.
 
 Features
