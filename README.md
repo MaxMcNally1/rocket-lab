@@ -6,17 +6,19 @@ This project is a Node.js application that provides a RESTful API for managing a
 Features
 The application exposes the following HTTP endpoints for performing CRUD operations on the rocket component nodes:
 
-Create a node with a specified parent
+1. Create a node with a specified parent
 
-Add a property on a specific node
+2. Add a property on a specific node
 
-Return the subtree of nodes with their properties for a provided node path
+3. Return the subtree of nodes with their properties for a provided node path
 
 The application also includes unit tests for the third endpoint using Jest.
 
 
 Getting Started
+
 Prerequisites
+
 Before running the application, make sure you have the following installed:
 
 Node.js (version 14 or higher)
