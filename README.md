@@ -72,5 +72,5 @@ This Node Hierarchy API is a Node.js application built with Express and Mongoose
 - cURL example:
   curl -X GET http://localhost:3000/node/subtree/Rocket/Stage1/Engine1
 
-### Requested Unit Test: Get a subtree rooted at a specified node
+### Requested Unit Test: Get a subtree rooted at a specified node (removed)
 - Run unit test: npm test
